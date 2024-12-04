@@ -2,9 +2,17 @@ import aluno as a
 import turma as t
 
 alunos = []
-alunos.append(a.Aluno("Fabio", "Teixeira", 8))
-alunos.append(a.Aluno("Fabiano", "Teixeira", 10))
-alunos.append(a.Aluno("Melissa", "Teixeira", -1))
+
+for dados in [
+    ("Fabio", "Teixeira", 8),
+    ("Fabiano", "Teixeira", 10),
+    ("Melissa", "Teixeira", -1),
+]:
+    try:
+        aluno = a.Aluno(*dados)
+        alunos.append(aluno)
+    except:
+        pass
 
 turmaObject = t.Turma()
 turmaObject.cadastrarAlunos(alunos)

@@ -8,10 +8,14 @@ class turmaTest(unittest.TestCase):
         print("Teste", self._testMethodName, "sendo executado...")
         self.alunos = []
 
-        self.alunos.append(a.Aluno("Fabio", "Teixeira", 10))
-        self.alunos.append(a.Aluno("Fabiano", "Teixeira", 8))
-        self.alunos.append(a.Aluno("Melissa", "Teixeira", 6))
-        self.alunos.append(a.Aluno("Angela", "Teixeira", 7))
+        try:
+            self.alunos.append(a.Aluno("Fabio", "Teixeira", 10))
+            self.alunos.append(a.Aluno("Fabiano", "Teixeira", 8))
+            self.alunos.append(a.Aluno("Melissa", "Teixeira", 6))
+            self.alunos.append(a.Aluno("Angela", "Teixeira", 7))
+            self.alunos.append(a.Aluno("Angela", "Teixeira", -1))
+        except:
+            pass
 
         self.turmaObject = t.Turma()
         self.turmaObject.cadastrarAlunos(self.alunos)
